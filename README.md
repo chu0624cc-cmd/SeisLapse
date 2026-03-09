@@ -57,6 +57,7 @@ SeiNoise/
 - Brenguier, F., Campillo, M., Hadziioannou, C., Shapiro, N. M., Nadeau, R. M., & Vilotte, E. (2008). Postseismic relaxation along the San Andreas fault at Parkfield from continuous seismological observations. *Science*, 321(5895), 1478-1481. (经典断裂带波速监测应用)
 - Clarke, D., Zaccarelli, L., Shapiro, N. M., & Brenguier, F. (2011). Assessment of resolution and accuracy of the Moving Window Cross Spectral technique for monitoring crustal temporal variations using ambient seismic noise. *Geophysical Journal International*, 186(2), 867-882. (MWCS 移动窗口互谱法基础)
 - Meier, U., Shapiro, N. M., & Brenguier, F. (2010). Detecting seasonal variations in seismic velocities within Los Angeles basin from correlations of ambient seismic noise. *Geophysical Journal International*, 181(2), 985-996. (Stretching 波形拉伸法基础)
+- Mao, S., Mordret, A., Campillo, M., Fang, H., & van der Hilst, R. D. (2020). On the measurement of seismic traveltime changes in the time–frequency domain with wavelet cross-spectrum analysis. Geophysical Journal International, 221(1), 550-568. doi:10.1093/gji/ggaa009 (小波交叉谱 WCS 方法核心文献)
 
 ## 💻 参考代码库 (Open Source Acknowledgements)
 
@@ -65,3 +66,4 @@ SeiNoise/
 - [**SeisNoise.jl**](https://github.com/tclements/SeisNoise.jl): 高性能的 Julia 语言背景噪声互相关库 (Clements & Denolle, 2020)。本项目的 `_correlate_freq` 及谱白化模块高度参考了其底层实现。
 - [**NoisePy**](https://github.com/mdenolle/NoisePy): 另一个由 Denolle 组主导的优秀 Python 背景噪声干涉流计算库，为本项目的工程架构设计提供了灵感。
 - [**MSNoise**](https://github.com/ROB-Seismology/MSNoise): 基于 Python 的完整地震噪声波速变化 (dv/v) 监测软件套件，是业界广泛使用的标准化工具。
+- dt-wavelet / cross-wavelet-transform: 由 Shujuan Mao 和 Aurélien Mordret 提供的开源库。本项目的 wxspectrum.py 高度参考了该代码库中利用小波交叉谱（Wavelet Cross-Spectrum）在时频域内测量走时偏移的 Python/MATLAB 实现逻辑。
