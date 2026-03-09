@@ -1,0 +1,25 @@
+TIME_NORM都用RAM   0.1~10HZ
+
+
+
+1.
+WHITEN_FREQMIN  = 0.1   # ← 宽带白化，没有窄带
+WHITEN_FREQMAX  = 10.0
+TIME_NORM       = 'ram' # ← 宽带RAM
+WHITEN_METHOD = smoothed   --------------结果最接近作者  
+
+
+1.
+WHITEN_FREQMIN  = 0.1   # ← 宽带白化，没有窄带
+WHITEN_FREQMAX  = 10.0
+TIME_NORM       = 'ram' # ← 宽带RAM
+WHITEN_METHOD = None   --------------接近作者  
+
+
+2.
+
+
+WHITEN_FREQMIN  = 1   # ← 宽带白化，没有窄带
+WHITEN_FREQMAX  = 2
+TIME_NORM       = 'ram' # ← 宽带RAM
+WHITEN_METHOD = smoothed     --------------  差距很大
