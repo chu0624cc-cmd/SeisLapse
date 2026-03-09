@@ -7,7 +7,8 @@ wxspectrum.py
 
 import numpy as np
 from scipy.fft import fft, ifft
-from scipy.signal import convolve2d
+# from scipy.signal import convolve2d
+from scipy.signal import fftconvolve  # 用 FFT 加速的卷积替换缓慢的 2D 卷积
 import pywt
 
 
@@ -44,7 +45,8 @@ def _smooth_cfs(cfs: np.ndarray, scales: np.ndarray, dt: float,
     # 尺度方向：boxcar 平滑
     if ns > 1:
         H = np.ones((ns, 1)) / ns
-        cfs_out = convolve2d(cfs_out, H, mode='same')
+        # cfs_out = convolve2d(cfs_out, H, mode='same')
+        cfs_out = fftconvolve(cfs_out, H, mode='same')
 
     return cfs_out
 

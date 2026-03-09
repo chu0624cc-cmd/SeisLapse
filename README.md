@@ -61,7 +61,7 @@ SeiNoise/
 
 ## 💻 参考代码库 (Open Source Acknowledgements)
 
-本项目的开发深刻受益于开源社区，特别是以下优秀的地震学软件项目。`SeiNoise` 的核心频域运算逻辑在数学上严格对齐了 `SeisNoise.jl`：
+本项目的开发深刻受益于开源社区，特别是以下优秀的地震学软件项目。`SeiLapse` 的核心频域运算逻辑在数学上严格对齐了 `SeisNoise.jl`：
 
 - [**SeisNoise.jl**](https://github.com/tclements/SeisNoise.jl): 高性能的 Julia 语言背景噪声互相关库 (Clements & Denolle, 2020)。本项目的 `_correlate_freq` 及谱白化模块高度参考了其底层实现。
 - [**NoisePy**](https://github.com/mdenolle/NoisePy): 另一个由 Denolle 组主导的优秀 Python 背景噪声干涉流计算库，为本项目的工程架构设计提供了灵感。
