@@ -42,3 +42,25 @@ SeiNoise/
 │   ├── seisplot.py
 │   └── seismic_module.py
 └── 01-完整步骤.ipynb      # 完整流程的使用示例与测试验证
+
+
+## 📖 参考文献 (References)
+
+本项目底层算法逻辑与数据处理管线主要基于以下经典文献与前沿研究：
+
+**背景噪声处理基础 (Ambient Noise Processing):**
+- Bensen, G. D., Ritzwoller, M. H., Barmin, M. P., Levshin, A. L., Lin, F., Moschetti, M. P., Shapiro, N. M., & Yang, Y. (2007). Processing seismic ambient noise data to obtain reliable broad-band surface wave dispersion measurements. *Geophysical Journal International*, 169(3), 1239-1260. [doi:10.1111/j.1365-246X.2007.03374.x](https://doi.org/10.1111/j.1365-246X.2007.03374.x)
+- Clements, T., & Denolle, M. A. (2020). SeisNoise.jl: Ambient Seismic Noise Cross Correlation on the CPU and GPU in Julia. *Seismological Research Letters*, 92(1), 517-527. [doi:10.1785/0220200192](https://doi.org/10.1785/0220200192)
+
+**尾波干涉与走时偏移提取 (Coda Wave Interferometry & dv/v):**
+- Brenguier, F., Campillo, M., Hadziioannou, C., Shapiro, N. M., Nadeau, R. M., & Vilotte, E. (2008). Postseismic relaxation along the San Andreas fault at Parkfield from continuous seismological observations. *Science*, 321(5895), 1478-1481. (经典断裂带波速监测应用)
+- Clarke, D., Zaccarelli, L., Shapiro, N. M., & Brenguier, F. (2011). Assessment of resolution and accuracy of the Moving Window Cross Spectral technique for monitoring crustal temporal variations using ambient seismic noise. *Geophysical Journal International*, 186(2), 867-882. (MWCS 移动窗口互谱法基础)
+- Meier, U., Shapiro, N. M., & Brenguier, F. (2010). Detecting seasonal variations in seismic velocities within Los Angeles basin from correlations of ambient seismic noise. *Geophysical Journal International*, 181(2), 985-996. (Stretching 波形拉伸法基础)
+
+## 💻 参考代码库 (Open Source Acknowledgements)
+
+本项目的开发深刻受益于开源社区，特别是以下优秀的地震学软件项目。`SeiNoise` 的核心频域运算逻辑在数学上严格对齐了 `SeisNoise.jl`：
+
+- [**SeisNoise.jl**](https://github.com/tclements/SeisNoise.jl): 高性能的 Julia 语言背景噪声互相关库 (Clements & Denolle, 2020)。本项目的 `_correlate_freq` 及谱白化模块高度参考了其底层实现。
+- [**NoisePy**](https://github.com/mdenolle/NoisePy): 另一个由 Denolle 组主导的优秀 Python 背景噪声干涉流计算库，为本项目的工程架构设计提供了灵感。
+- [**MSNoise**](https://github.com/ROB-Seismology/MSNoise): 基于 Python 的完整地震噪声波速变化 (dv/v) 监测软件套件，是业界广泛使用的标准化工具。
